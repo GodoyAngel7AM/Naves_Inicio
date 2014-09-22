@@ -17,5 +17,5 @@ public:
 	};
 
 private:
-	int estado;
+	int estado;//ACT2: Mal, El estado ya no debe ser int, si no tipo Estado, como el enum que agregaste.
 };
