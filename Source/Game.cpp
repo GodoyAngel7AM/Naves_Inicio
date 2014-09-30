@@ -5,6 +5,7 @@
 #include "Game.h"
 
 CGame::CGame(){
+<<<<<<< HEAD
 	int estado = 0;
 	
 	SDL_Surface *nave;
@@ -13,6 +14,9 @@ CGame::CGame(){
 	{
 		printf("Error: %s", SDL_GetError());
 		exit(EXIT_FAILURE);
+=======
+	estado = 0;//ACT2: Aqui vas indicar tu estado inicial.
+>>>>>>> origin/master
 }
 	screen = SDL_SetVideoMode(640, 480, 24, SDL_SWSURFACE);
 
