@@ -1,3 +1,4 @@
+#include <SDL.h>
 
 class CGame
 {
@@ -5,8 +6,11 @@ public:
 	bool Start();
 	static CGame instanceGame;
 
+
 	CGame();
 	void Finalize();
+
+	
 
 	enum Estado{
 		ESTADO_INICIADO,
@@ -17,5 +21,8 @@ public:
 	};
 
 private:
-	int estado;
+	void Iniciando();
+	SDL_Surface *screen;
+	SDL_Surface *nave;
+	Estado estado;
 };
