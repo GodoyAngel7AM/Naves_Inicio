@@ -7,31 +7,46 @@
 CGame::CGame(){
 	estado = ESTADO_INICIADO;//ACT2: Mal, Aqui iba tu estado inicial
 
-	SDL_Surface *nave;
+	//ACT3: Mal, todo este codigo va en el metodo "Iniciando()"
+	//SDL_Surface *nave;
 
-	if(SDL_Init(SDL_INIT_VIDEO)<0)
-	{
-		printf("Error: %s", SDL_GetError());
-		exit(EXIT_FAILURE);
+	//if(SDL_Init(SDL_INIT_VIDEO)<0)
+	//{
+	//	printf("Error: %s", SDL_GetError());
+	//	exit(EXIT_FAILURE);
 
-	}
-	screen = SDL_SetVideoMode(640, 480, 24, SDL_SWSURFACE);
+	//}
+	//screen = SDL_SetVideoMode(640, 480, 24, SDL_SWSURFACE);
 
-	if (screen == NULL)
-	{
-		printf("Error %s ", SDL_GetError());
-		exit(EXIT_FAILURE);
-	}
+	//if (screen == NULL)
+	//{
+	//	printf("Error %s ", SDL_GetError());
+	//	exit(EXIT_FAILURE);
+	//}
 
 
 	//Asignar texto a la pantalla
 	//SDL_Flip(screen);
-	SDL_WM_SetCaption("Mi Primer Juego", NULL);
+	//SDL_WM_SetCaption("Mi Primer Juego", NULL);
 	atexit(SDL_Quit);
 }
 
 void CGame::Iniciando(){
-	SDL_Init(SDL_INIT_VIDEO);
+	//SDL_Surface *nave;
+
+	if(SDL_Init(SDL_INIT_VIDEO)<0){
+		printf("Error: %s", SDL_GetError());
+		exit(EXIT_FAILURE);
+	}
+
+	screen = SDL_SetVideoMode(640, 480, 24, SDL_SWSURFACE);
+
+	if (screen == NULL){
+		printf("Error %s ", SDL_GetError());
+		exit(EXIT_FAILURE);
+	}
+
+	SDL_WM_SetCaption("Mi Primer Juego", NULL);
 }
 // Con esta función eliminaremos todos los elementos en pantalla
 void CGame::Finalize(){
