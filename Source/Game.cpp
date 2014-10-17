@@ -5,19 +5,16 @@
 #include "Game.h"
 
 CGame::CGame(){
-<<<<<<< HEAD
-	int estado = 0;
-	
+	estado = ESTADO_INICIADO;//ACT2: Mal, Aqui iba tu estado inicial
+
 	SDL_Surface *nave;
-	
+
 	if(SDL_Init(SDL_INIT_VIDEO)<0)
 	{
 		printf("Error: %s", SDL_GetError());
 		exit(EXIT_FAILURE);
-=======
-	estado = 0;//ACT2: Aqui vas indicar tu estado inicial.
->>>>>>> origin/master
-}
+
+	}
 	screen = SDL_SetVideoMode(640, 480, 24, SDL_SWSURFACE);
 
 	if (screen == NULL)
@@ -27,13 +24,9 @@ CGame::CGame(){
 	}
 
 
-
-	
-
-
-//Asignar texto a la pantalla
-//SDL_Flip(screen);
-SDL_WM_SetCaption("Mi Primer Juego", NULL);
+	//Asignar texto a la pantalla
+	//SDL_Flip(screen);
+	SDL_WM_SetCaption("Mi Primer Juego", NULL);
 	atexit(SDL_Quit);
 }
 
@@ -49,9 +42,9 @@ bool CGame::Start()
 {
 	// Esta variable nos ayudara a controlar la salida del juego...
 	int salirJuego = false;
-          
+
 	while (salirJuego == false){
-            
+
 		//Maquina de estados
 		switch(estado){
 		case Estado::ESTADO_INICIADO:
@@ -62,7 +55,7 @@ bool CGame::Start()
 
 				/*Ejemplo con imagenes formato .jpg*/
 				/*nave = IMG_LoadJPG_RW(SDL_RWFromFile("../Data/tools.jpg", "rb"));*/
-				
+
 				/*Ejemplo con imagenes formato .PNG*/
 				nave = IMG_LoadBMP_RW(SDL_RWFromFile("../Data/minave.bmp", "rb"));
 
@@ -98,6 +91,6 @@ bool CGame::Start()
 			break;
 		};
 		SDL_Flip(screen);
-    }
+	}
 	return true;
 }
